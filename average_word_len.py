@@ -1,0 +1,21 @@
+# haithem ben abdelaziz: haithem.ben.abdelaziz@gmail.com
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jun 22 00:51:25 2021
+
+@author: haihem
+"""
+
+def average_words_length(sentence):
+    for punctuation in "!?',;.":
+        sentence = sentence.replace(punctuation, ' ') # remplacer dans notre texte, les caractères de ponctuation par un espace
+    words = sentence.split() # splitter notre texte en mots
+ 
+    return round(sum(len(word) for word in words)/len(words), 2) # retourner la longueur moyenne des mots avec deux décimales maximum
+ 
+sentence1 = "Même les phrases avec des caractères de la langue française peuvent être utilisées."
+sentence2 = "Le blog 'ledatascientist' est le blog français de référence en Data Science."
+ 
+print(average_words_length(sentence1))
+print(average_words_length(sentence2))
